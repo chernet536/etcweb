@@ -1,0 +1,23 @@
+.container2 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: -100px;
+}
+
+.container2-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.paragraph1,
+.paragraph2 {
+  grid-column: span 1;
+  margin-right: 20px;
+}
+
+.paragraph2 {
+  
+  margin-right: 35px;
+}
