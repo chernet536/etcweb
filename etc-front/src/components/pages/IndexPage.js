@@ -5,7 +5,7 @@ export default function IndexPage() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    fetch("http://etcweb-atkolh1mj-chernettariku12-gmailcom.vercel.app/post")
+    fetch("http://localhost:4000/post")
       .then((response) => response.json())
       .then((data) => setPosts(data))
       .catch((error) => console.error("Error retrieving posts:", error));
