@@ -54,7 +54,7 @@ export default function Post({_id, title, summary, cover, content, createdAt, au
                 transition: 'transform 0.3s ease',
                 transform: isHovered ? 'scale(1.1)' : 'scale(1)',
               }}
-              src={'http://etcweb-kdyx5nog9-chernettariku12-gmailcom.vercel.app/' + cover}
+              src={'http://localhost:4000/' + cover}
               alt=""
             />
           </Link>
