@@ -11,10 +11,12 @@
   grid-template-columns: repeat(2, 1fr);
 }
 .paragraph5 h1{
-  margin-left: -525px;
+  font-size: 18px;
+  margin-left: -480px;
 }
 .paragraph6 h1{
-  margin-left: -500px;
+  margin-left: -512px;
+  font-size: 18px;
 }
 .paragraph5,
 .paragraph6 {
@@ -32,7 +34,7 @@
     flex-direction: column;
   }
   .paragraph5 h1{
-    margin-left: -218px;
+    margin-left: -160px;
   }
   .paragraph6 h1{
     margin-left: -240px;
@@ -44,6 +46,7 @@
     flex-direction: column;
   }
   .paragraph5 h1{
+    
     margin-left: -140px;
   }
   .paragraph6 h1{
