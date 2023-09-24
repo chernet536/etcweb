@@ -10,7 +10,12 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-
+.paragraph1 h1{
+  margin-left: -525px;
+}
+.paragraph2 h1{
+  margin-left: -500px;
+}
 .paragraph1,
 .paragraph2 {
   grid-column: span 1;
@@ -20,4 +25,28 @@
 .paragraph2 {
   
   margin-right: 35px;
+}
+@media only screen and (max-width:820px) {
+  .container2{
+    display: flex;
+    flex-direction: column;
+  }
+  .paragraph1 h1{
+    margin-left: -218px;
+  }
+  .paragraph2 h1{
+    margin-left: -240px;
+  }
+}
+@media only screen and (max-width:320px){
+  .container2{
+    display: flex;
+    flex-direction: column;
+  }
+  .paragraph1 h1{
+    margin-left: -140px;
+  }
+  .paragraph2 h1{
+    margin-left: -150px;
+  }
 }
