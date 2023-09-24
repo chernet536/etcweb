@@ -1,14 +1,14 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import {UserContext} from "../../UserContext";
+import { UserContext } from '../../UserContext';
 import JobDetail from './JobDetail';
 import Footer from './Footer2';
 
 function JobPagee() {
   const [jobPosts, setJobPosts] = useState([]);
   const { userInfo } = useContext(UserContext);
-  
+
   const [newJobPost, setNewJobPost] = useState({ title: '', description: '', location: '' });
 
   const styles = {
@@ -78,61 +78,61 @@ function JobPagee() {
       })
       .catch((error) => console.log(error));
   };
-  console.log(userInfo.id);
+
   return (
     <>
-      <h1 style={{ textAlign: 'center', marginTop:'20px', marginBottom:'-40px' }}>Currently Available Positions</h1>
+      <h1 style={{ textAlign: 'center', marginTop: '20px', marginBottom: '-40px' }}>Currently Available Positions</h1>
       <div style={styles.container}>
-        <div style={{ overflowX: 'auto' }}>
-          <table style={styles.table}>
-            <thead style={styles.tableHead}>
-              <tr style={styles.tableRow}>
-                <th style={{ ...styles.tableCell, width: '30%' }}>Job Title</th>
-                <th style={{ ...styles.tableCell, width: '40%' }}>Description</th>
-                <th style={{ ...styles.tableCell, width: '20%' }}>Deadline</th>
-                <th style={{ ...styles.tableCell, width: '10%' }}></th>
-              </tr>
-            </thead>
-            <tbody>
-              {jobPosts.map((jobPost) => (
-                <tr style={styles.tableRow} key={jobPost._id}>
-                  <td style={{ ...styles.tableCell, ...styles.jobTitle }}>
-                    <Link style={styles.jobLink} to={`/JobDetail/${jobPost._id}`}>
-                      {jobPost.title}
-                    </Link>
-                  </td>
-                  <td style={styles.tableCell}>
-                    <Link style={styles.jobLink} to={`/JobDetail/${jobPost._id}`}>
-                      {jobPost.description}
-                    </Link>
-                  </td>
-                  <td style={styles.tableCell}>
-                    <Link style={styles.jobLink} to={`/JobDetail/${jobPost._id}`}>
-                      {jobPost.location}
-                    </Link>
-                  </td>
-                  {userInfo && userInfo.id && jobPost && userInfo.id === jobPost.author._id && (
-                   
-  <td style={styles.tableCell}>
-    <button
-      style={styles.deleteButton}
-      onClick={() => handleDelete(jobPost._id)}
-      onMouseOver={(e) => (e.target.style.backgroundColor = styles.deleteButtonHover.backgroundColor)}
-      onMouseOut={(e) => (e.target.style.backgroundColor = styles.deleteButton.backgroundColor)}
-    >
-      Delete
-    </button>
-  </td>
-)}
-                  
-                 
+        {jobPosts.length === 0 ? (
+          <p style={{ textAlign: 'center', marginTop: '50px' }}>There are currently no positions available.</p>
+        ) : (
+          <div style={{ overflowX: 'auto' }}>
+            <table style={styles.table}>
+              <thead style={styles.tableHead}>
+                <tr style={styles.tableRow}>
+                  <th style={{ ...styles.tableCell, width: '30%' }}>Job Title</th>
+                  <th style={{ ...styles.tableCell, width: '40%' }}>Description</th>
+                  <th style={{ ...styles.tableCell, width: '20%' }}>Deadline</th>
+                  <th style={{ ...styles.tableCell, width: '10%' }}></th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <div style={{marginTop:'100px'}}></div>
-     
+              </thead>
+              <tbody>
+                {jobPosts.map((jobPost) => (
+                  <tr style={styles.tableRow} key={jobPost._id}>
+                    <td style={{ ...styles.tableCell, ...styles.jobTitle }}>
+                      <Link style={styles.jobLink} to={`/JobDetail/${jobPost._id}`}>
+                        {jobPost.title}
+                      </Link>
+                    </td>
+                    <td style={styles.tableCell}>
+                      <Link style={styles.jobLink} to={`/JobDetail/${jobPost._id}`}>
+                        {jobPost.description}
+                      </Link>
+                    </td>
+                    <td style={styles.tableCell}>
+                      <Link style={styles.jobLink} to={`/JobDetail/${jobPost._id}`}>
+                        {jobPost.location}
+                      </Link>
+                    </td>
+                    {userInfo && userInfo.id && jobPost && userInfo.id === jobPost.author._id && (
+                      <td style={styles.tableCell}>
+                        <button
+                          style={styles.deleteButton}
+                          onClick={() => handleDelete(jobPost._id)}
+                          onMouseOver={(e) => (e.target.style.backgroundColor = styles.deleteButtonHover.backgroundColor)}
+                          onMouseOut={(e) => (e.target.style.backgroundColor =styles.deleteButton.backgroundColor)}
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    )}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+        <div style={{ marginTop: '100px' }}></div>
       </div>
       <Footer />
     </>
