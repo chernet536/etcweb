@@ -17,15 +17,16 @@
     grid-column: span 1;
   }
   .paragraph1 h1{
-    margin-left: 1px;
+    
+    margin-left: -94px;
     font-size: 20px;
   }
   .paragraph2 h1{
-    margin-left: 1px;
+    margin-left: -82px;
     font-size: 20px;
   }
   .paragraph3 h1{
-    margin-left: 1px;
+    margin-left: -142px;
     font-size: 20px;
   }
   .paragraph1 p{
@@ -50,5 +51,20 @@
     .container{
       display: flex;
       flex-direction: column;
+    }
+    .paragraph1 h1{
+    
+      margin-left: -5px;
+      font-size: 17px;
+    }
+    .paragraph2 h1{
+        
+      margin-left: -5px;
+      font-size: 17px;
+    }
+    .paragraph3 h1{
+       
+      margin-left: -5px;
+      font-size: 17px;
     }
   }
