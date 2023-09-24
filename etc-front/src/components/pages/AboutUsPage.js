@@ -17,10 +17,14 @@ function AboutUsPage() {
       <CoreValues />
       <OurPartners />
       <Teams/>
-      <LetsTalk />
+    {/*<LetsTalk />*/}
+      <div style={{marginTop:'50px'}}></div>
       <Footer />
     </>
   )
 }
+
+export default AboutUsPage
+
 
 export default AboutUsPage
